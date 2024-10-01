@@ -1,18 +1,18 @@
-//import dos modulos
+//imports dos módulos
 import localFont from "next/font/local";
-import { Roboto } from "next/font/google";
+import {Roboto} from "next/font/google";
 
 //imports internos
 import "./globals.css";
-import { Menu } from "@/components/menu"; 
-import { Footer } from "@/components/footer"; 
+import { Menu } from "@/components/menu";
+import { Footer } from "@/components/footer";
 
-const roboto = Roboto({
+const roboto = Roboto ({
   weight: ["100", "400", "900"],
   style: "normal",
   variable: "--roboto",
   subsets: ["latin"]
-});
+})
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -26,6 +26,7 @@ const geistMono = localFont({
 });
 
 
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -34,11 +35,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${roboto.variable} antialiased flex flex-col justify-center align-center w-full`}
+        className={`${geistSans.variable} ${geistMono.variable} ${roboto.variable} antialiased`}
       >
-        <Menu page1="Pagina 1" page2="Pagina 2" page3={true} page4={4}/>
+        <Menu op1="Home" op2="Math" op3="General Function" op4="Posts"></Menu>
         {children}
-        <Footer email="marimarques@gmail.com" data="28.05.2006"/>
+        <Footer telefone="(41)99999-9999" email="ingrid@gmail.com" copyright="Todos os direitos reservados"></Footer>
       </body>
     </html>
   );

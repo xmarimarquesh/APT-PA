@@ -18,7 +18,7 @@ const config: Config = {
         small: "16px"
       },
       fontFamily: {
-        robFont: "var(--roboto)"
+        roboto: "var(--roboto)"
       }
     },
   },
