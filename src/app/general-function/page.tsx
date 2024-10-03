@@ -30,37 +30,40 @@ const GeneralFunction: React.FC = () => {
     }
 
     return (
-        <>
-            <h1>Função Reaproveitada</h1>
-
+        <div className="flex flex-col mt-10 items-center w-full h-screen">
+            <h1 className='font-bold text-[3em] text-pink-900'>Função Reaproveitada</h1>
+            <div className='bg-pink-900 p-6 m-3 rounded-md shadow-2xl'>
+            
             <div>
-                <input type="text" placeholder="Número 01" value={numero1} onChange={(e) => setNumero1(e.target.value)}/>
+                <input type="text" placeholder="0" value={numero1} onChange={(e) => setNumero1(e.target.value)}/>
             </div>
             <div>
-                <input type="text" placeholder="Número 02" value={numero2} onChange={(e) => setNumero2(e.target.value)}/>
+                <input type="text" placeholder="0" value={numero2} onChange={(e) => setNumero2(e.target.value)}/>
+            </div>
+            <div className='flex justify-center'>
+                <button className='bg-white text-pink-900 font-extrabold m-2 text-[1.2em] rounded-md w-8 hover:scale-110 transition ease-in-out' onClick={() => handleAll({a: numero1, b: numero2})}>=</button>
             </div>
             <div>
-                <button onClick={() => handleAll({a: numero1, b: numero2})}>Calcular todas</button>
-            </div>
-            <div>
-                <div>
+                <div className='bg-white flex flex-col items-center text-[1.2em] font-bold rounded-md m-2'>
                     <h2>Soma</h2>
-                    <p>{!isNaN(respSoma ?? NaN) ? respSoma : erro}</p>
+                    <p className='text-[1.5em]'>{!isNaN(respSoma ?? NaN) ? respSoma : erro}</p>
                 </div>
-                <div>
+                <div className='bg-white flex flex-col items-center text-[1.2em] font-bold rounded-md m-2'>
                     <h2>Subtração</h2>
-                    <p>{!isNaN(respSub ?? NaN) ? respSub : erro}</p>
+                    <p className='text-[1.5em]'>{!isNaN(respSub ?? NaN) ? respSub : erro}</p>
                 </div>
-                <div>
+                <div className='bg-white flex flex-col items-center text-[1.2em] font-bold rounded-md m-2'>
                     <h2>Multiplicação</h2>
-                    <p>{!isNaN(respMult ?? NaN) ? respMult : erro}</p>
+                    <p className='text-[1.5em]'>{!isNaN(respMult ?? NaN) ? respMult : erro}</p>
                 </div>
-                <div>
+                <div className='bg-white flex flex-col items-center text-[1.2em] font-bold rounded-md m-2'>
                     <h2>Divisão</h2>
-                    <p>{!isNaN(respDiv ?? NaN) ? respDiv?.toFixed(1) : erro}</p>
+                    <p className='text-[1.5em]'>{!isNaN(respDiv ?? NaN) ? respDiv?.toFixed(1) : erro}</p>
                 </div>
             </div>
-        </>
+                
+            </div>
+        </div>
     )
 }
 

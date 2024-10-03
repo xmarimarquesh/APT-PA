@@ -39,7 +39,7 @@ export default function RootLayout({
       >
         <Menu op1="Home" op2="Math" op3="General Function" op4="Posts"></Menu>
         {children}
-        <Footer telefone="(41)99999-9999" email="ingrid@gmail.com" copyright="Todos os direitos reservados"></Footer>
+        <Footer telefone="(41)99999-9999" email="mariana@gmail.com" copyright="Todos os direitos reservados"></Footer>
       </body>
     </html>
   );

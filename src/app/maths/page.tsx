@@ -67,45 +67,39 @@ const Maths: React.FC = () => {
 
 
     return (
-        <>
-            <h1>Use client com controle de estado</h1>
-            <div>
-                <label htmlFor="n1">Número 1</label>
-                <input id="n1" type="text" value={numero1} onChange={(e) => setNumero1(e.target.value)}></input>
+        <div className="flex flex-col mt-10 items-center w-full h-screen text-white">
+            <h1 className="font-bold text-[3em] text-pink-900">Use client com controle de estado</h1>
+            <div className="bg-pink-800 flex flex-col mt-10 items-center w-[30%] p-10 shadow-2xl">
+            <div className="w-[90%] flex flex-row justify-center m-2">
+                <label className="" htmlFor="n1">Número 1</label>
+                <input className="w-[50%] p-1 ml-3 rounded-md text-black" placeholder="Digite aqui" id="n1" type="text" value={numero1} onChange={(e) => setNumero1(e.target.value)}></input>
             </div>
-            <div>
+            <div className="w-[90%] flex flex-row justify-center m-2">
                 <label htmlFor="n2">Número 2</label>
-                <input id="n2" type="text" value={numero2} onChange={(e) => setNumero2(e.target.value)}></input>
+                <input className="w-[50%] p-1 ml-3 rounded-md text-black" placeholder="Digite aqui"id="n2" type="text" value={numero2} onChange={(e) => setNumero2(e.target.value)}></input>
             </div>
-            <div>
-                <h2>Soma</h2>
-                {!isNaN(respSoma ?? NaN) ? respSoma : msgError}
-                <br/>
-                <button onClick={handleSoma}>SOMAR</button>
-                <br/><br/>
+            <div className="w-full flex justify-center">
+                <button className="m-2 p-2 rounded-md bg-white text-pink-950 font-bold hover:scale-110 transition ease-in-out" onClick={handleSoma}>SOMAR</button>
+                <button className="m-2 p-2 rounded-md bg-white text-pink-950 font-bold hover:scale-110 transition ease-in-out" onClick={handleSubtracao}>SUBTRAIR</button>
+                <button className="m-2 p-2 rounded-md bg-white text-pink-950 font-bold hover:scale-110 transition ease-in-out" onClick={handleMultiplicacao}>MULTIPLICAR</button>
+                <button className="m-2 p-2 rounded-md bg-white text-pink-950 font-bold hover:scale-110 transition ease-in-out" onClick={handleDivisao}>DIVIDIR</button>
             </div>
-            <div>
-                <h2>Subtração</h2>
-                {!isNaN(respSubtracao ?? NaN) ? respSubtracao : msgError}
-                <br/>
-                <button onClick={handleSubtracao}>SUBTRAIR</button>
-                <br/><br/>
+            <table className="table-fixed border-collapse border-2 border-white w-full">
+                <thead>
+                    <th className="m-2 p-2 border-2 border-white">Soma</th>
+                    <th className="m-2 p-2 border-2 border-white">Subtração</th>
+                    <th className="m-2 p-2 border-2 border-white">Multiplicação</th>
+                    <th className="m-2 p-2 border-2 border-white">Divisão</th>
+                </thead>
+                <tr>
+                    <td className="m-2 p-2 border-2 border-white">{!isNaN(respSoma ?? NaN) ? respSoma : msgError}</td>
+                    <td className="m-2 p-2 border-2 border-white">{!isNaN(respSubtracao ?? NaN) ? respSubtracao : msgError}</td>
+                    <td className="m-2 p-2 border-2 border-white">{!isNaN(respMultiplicacao ?? NaN) ? respMultiplicacao : msgError}</td>
+                    <td className="m-2 p-2 border-2 border-white">{!isNaN(respDivisao ?? NaN) ? respDivisao : msgError}</td>
+                </tr>
+            </table>
             </div>
-            <div>
-                <h2>Multiplicação</h2>
-                {!isNaN(respMultiplicacao ?? NaN) ? respMultiplicacao : msgError}
-                <br/>
-                <button onClick={handleMultiplicacao}>MULTIPLICAR</button>
-                <br/><br/>
-            </div>
-            <div>
-                <h2>Divisão</h2>
-                {!isNaN(respDivisao ?? NaN) ? respDivisao : msgError}
-                <br/>
-                <button onClick={handleDivisao}>DIVIDIR</button>
-                <br/><br/>
-            </div>
-        </>
+        </div>
     )
 }
 
