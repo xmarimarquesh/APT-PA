@@ -4,5 +4,6 @@ export enum ROUTES {
     generalFunction = "/funcao-reaproveitada",
     post = "/posts",
     fetchNativo = "/pagina-com-fetch",
-    AxiosPage = "/pagina-com-axios",
+    axiosPage = "/pagina-com-axios",
+    serverPage = "/pagina-server-side",
 }

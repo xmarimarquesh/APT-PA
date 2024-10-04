@@ -13,7 +13,7 @@ interface IData {
     image: string
 }
 
-const AxiosPage = () => {
+const axiosPage = () => {
     const [data, setData] = useState<IData[]>([]);
     const [erro, setErro] = useState<boolean>(false);
     const [errorMessage, setErrorMessage] = useState<string>("Não foi possivel buscar os dados");
@@ -54,4 +54,4 @@ const AxiosPage = () => {
     )
 }
 
-export default AxiosPage;
+export default axiosPage;
