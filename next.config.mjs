@@ -18,8 +18,24 @@ const nextConfig = {
             {
                 source: "/poststwits",
                 destination: "/post"
+            },
+            {
+                source: "/pagina-com-fetch",
+                destination: "/fetch-page"
+            },
+            {
+                source: "/pagina-com-axios",
+                destination: "/axios-page"
             }
         ]
+    },
+    images: {
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'rickandmortyapi.com',
+        },
+    ],
     }
 };
 
